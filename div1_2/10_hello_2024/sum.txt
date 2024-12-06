@@ -1,0 +1,11 @@
+https://codeforces.com/blog/entry/124220
+
+1. wallet exchange
+2. plus minus spit
+3. grouping increases
+4. tree
+
+5. counting prefixes：给定有序数组a, 求前缀和为a的只包含-1,1的数组个数
+6. wine factory: 给定n个节点的网络流，及各个边的容量，求每次更新后的网络的权重
+7. tree lgm：给定n个节点的无权树，游戏规则：选定根节点后移动两个玩家依次移动硬币，直至一方无法移动后另一方获胜，求所有获胜结果的边
+8. tree diameter: 给定n个节点的一棵加权树，求树的最大直径

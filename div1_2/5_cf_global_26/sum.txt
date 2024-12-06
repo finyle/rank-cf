@@ -1,0 +1,12 @@
+https://codeforces.com/blog/entry/130252
+
+a. strange splitting
+b. large addition
+c. magnitede
+d. "a" string problem
+
+e. shuffle
+f. reconstruction
+g. magic trick
+h. tower capturing
+

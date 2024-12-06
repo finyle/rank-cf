@@ -1,0 +1,13 @@
+https://codeforces.com/blog/entry/132569
+
+1. distanced coloring
+2. removals game
+3. black circles
+4. dfs checker
+
+5. cosmic rays：给定长度为n的数组,每秒使得首个元素，及相邻的不等值元素消失前一个，求数组为空的耗时
+6. court blue: 给定i,j,m,n 在满足 gcd(i,j)<=1[i,j 互质]且 i<=m,j<=n的前提下, 使得 i*m+j*n 最大
+
+7. lattice optimizing：给定n*n的矩阵，从(0,0)移动至(n,n),最大化路径上的mex值(不存在与序列中的最大正数)
+8. counting 101: 给定长度为n的序列，执行操作：选择相邻三元组，是的首尾元素+1后三元组中的最大元素不超过m；求最大可操作次数
+

@@ -1,0 +1,7 @@
+https://codeforces.com/blog/entry/126043
+
+5. wonderful: 求平衡子序列数目：
+6. maximize the difference：给定数组a，执行操作：
+7. prefix max set counting：给定树节点，两个玩家轮流求树节点的全排列
+8. interactive mex tree：给定树节点，两个玩家轮流求树节点的全排列
+9. counting is fun: 给定二进制序列p，求该序列mode的个数：mode

@@ -1,0 +1,12 @@
+https://codeforces.com/blog/entry/132014
+
+a. maximize the last element
+b. and reconstruction
+c. absolute zero
+d. prime xor coloring
+
+e. coloring game
+f. triangle formation
+g. grid reset
+h. prime split game
+i. grid game

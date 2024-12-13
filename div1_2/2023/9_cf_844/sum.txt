@@ -1,1 +1,11 @@
 https://codeforces.com/blog/entry/111783
+
+1. parallel projection
+2. going to the cinema
+3. equal frequencies
+4. many perfect squares
+
+5. rectangle shrinking
+6. bracket insertion
+7. diverse coloring
+8. window signals

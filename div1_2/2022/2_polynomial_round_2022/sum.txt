@@ -1,1 +1,11 @@
 https://codeforces.com/blog/entry/110184
+
+1. add plus minus sign
+2. coloring
+3. ice and fire
+4. same count one
+
+5. two chess pieces
+6. pigs
+7. segment covering
+8. maximum permutation

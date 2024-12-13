@@ -1,1 +1,11 @@
-https://codeforces.com/contest/1750
+https://codeforces.com/blog/entry/108504
+
+1. indirect sort
+2. maximum substring
+3. complementary xor
+4. count gcd
+
+5. bracket cost
+6. majority
+7. doping
+8. binary string forces

@@ -1,1 +1,11 @@
 https://codeforces.com/blog/entry/114521
+
+1. beautiful seq
+2. candies
+3. make it permutation
+4. climbing the tree
+
+5. monsters
+6. m-tree
+7. maximum prefix
+8. last number

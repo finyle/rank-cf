@@ -1,1 +1,11 @@
 https://codeforces.com/blog/entry/118128
+
+1. subtraction game
+2. permutations primes
+3. particles
+4. row major
+
+5. great grids
+6. min cost permutation
+7. tree weights
+8. multiple of three cycles

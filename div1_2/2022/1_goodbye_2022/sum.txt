@@ -1,1 +1,11 @@
 https://codeforces.com/blog/entry/110754
+
+1. whiteboards
+2. permutation
+3. number theory
+4. game
+
+5. tree
+6. sequence
+7. bracket
+8. festival

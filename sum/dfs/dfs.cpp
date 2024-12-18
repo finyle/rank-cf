@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// tedukuri
+// tedukuri： 简单应用； 分治； 分形； 机器实现(递归的机器实现)
 // 枚举： 组合， 指数， 排列
 struct enum_combination {
     int n, m;
@@ -77,7 +77,8 @@ struct enum_permute {
     }
 };
 
-// fractal
+
+// fractal， 分形问题
 struct fractal_streets {
     pair<ll, ll> calc(int n, ll m) {
         if (n == 0) return make_pair(0, 0);
@@ -104,7 +105,7 @@ struct fractal_streets {
     }
 };
 
-// sumdiv
+// sumdiv, 分治， 配合快速幂，等比数列求和
 // 50000000 50000000
 struct sumdiv {
     const ll P = 9901;
@@ -195,6 +196,16 @@ struct fractal {
     }
 };
 
+// 平面最近点对
+//4
+//0 0
+//0 1
+//1 0
+//1 1
+//2 2
+//2 3
+//3 2
+//3 3
 struct raid {
     const int N = 100006;
     const double INF = 0x3f3f3f3f, eps = 0.000001;
@@ -251,8 +262,7 @@ struct raid {
 
 };
 
-// dp treeDP
-
+// dp treeDP: dance, lesson, accumulation
 struct treeDP_dance {
     vector<int> son[10010];
     int f[10010][2], v[10010], h[10010], n;
@@ -267,21 +277,6 @@ struct treeDP_dance {
             f[x][1] += f[y][0];
         }
     }
-//    7
-//    1
-//    1
-//    1
-//    1
-//    1
-//    1
-//    1
-//    1 3
-//    2 3
-//    6 4
-//    7 4
-//    4 5
-//    3 5
-//    0 0
     int main() {
         cin >> n;
         for (int i = 1; i <= n; i++) scanf("%d", &h[i]);
@@ -609,8 +604,8 @@ int main() {
 //    enum_combination ec;
 //    ec.main();
 
-//    enum_exponotial ee;
-//    ee.main();
+    enum_exponotial ee;
+    ee.main();
 
 //    enum_permute ep;
 //    ep.main();
@@ -639,8 +634,8 @@ int main() {
 //    dfs_climb dc;
 //    dc.main();
 
-    treeDP_dance td;
-    td.main();
+//    treeDP_dance td;
+//    td.main();
 
 //    printf("hi");
     return 0;

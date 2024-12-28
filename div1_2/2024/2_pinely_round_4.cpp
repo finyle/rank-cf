@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
-#define ru(i,l,r) for(int i=(l);i<=(r);i++)
+#define ru_(i,l,r) for(int i=(l);i<=(r);i++)
+#define ru(i,l,r) for(int i=(l);i<(r);i++)
 #define rup(i,l,r) for(int i=(l);i<=(r);i+=2)
-#define rd(i,r,l) for(int i=(r);i>=(l);i--)
+#define rd_(i,r,l) for(int i=(r);i>=(l);i--)
+#define rd(i,r,l) for(int i=(r);i>(l);i--)
 #define ll long long
 #define pii pair<ll,int>
 #define s1 first
@@ -13,6 +15,7 @@ struct a{
     static const int maxn=100;
     int t,n,a[maxn];
     int main(){
+        ios::sync_with_stdio(0); cin.tie(0);
         cin>>t;
         while(t--){
             cin>>n; ru(i,1,n) cin>>a[i]; int ans=0;
@@ -23,19 +26,19 @@ struct a{
 };
 struct b{
     static const int maxn=1e4;
-    int n, b[maxn],a[maxn];
+    int n,b[maxn],a[maxn];
     void solve(){
-        cin>>n; ru(i,1,n) cin>>b[i];
-        b[0]=b[n]=0;ru(i,1,n) a[i]=b[i-1]|b[i];
+        cin>>n; ru(i,1,n)cin>>b[i];
+        b[0]=b[n]=0;
+        ru_(i,1,n) a[i]=b[i-1]|b[i];
         bool valid=true;
-        ru(i,1,n) {
-            if((a[i]&a[i+1])!=b[i]){valid=false; break;}}
+        ru(i,1,n)if((a[i]&a[i+1])!=b[i]){valid=false; break;}
         if(valid){
-            ru(i,1,n){cout<<a[i]<<" ";}
-            cout<<"\n";
+            ru_(i,1,n)cout<<a[i]<<' ';
+            cout<<endl;
         } else cout<<-1<<endl;
     }
-    int main(){int t; cin>>t; while(t--) solve();}
+    int main(){ios::sync_with_stdio(0); cin.tie(0);int t; cin>>t; while(t--)solve();}
 };
 struct c{
     static const int maxn=1e4;
@@ -150,17 +153,13 @@ struct h{
     void init(){
         isCompsite[1]=true;
         ru(i,2,maxn) ru(j,i*2,maxn){isCompsite[j]=true;}
-
     }
 };
 
 int main(){
 //    a a;
 //    a.main();
+    b b;
+    b.main();
 
-//    b b;
-//    b.main();
-
-    c c;
-    c.main();
 }

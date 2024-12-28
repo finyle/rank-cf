@@ -89,6 +89,18 @@ int main(){
 
     // hash
     pair<int,int> pi={1,2};
-    cout<<pi.first<<" "<<pi.second;
+    cout<<pi.first<<" "<<pi.second<<endl;
+
+    // for range, 0 <; 1 <=
+    int b[]={1,2,3};
+    for(int i=0;i<3;i++){
+        cout<<b[i]<<" ";
+    }; cout<<endl;
+
+    // accumulate
+    cout<<"accumulate([1,2,3]) is: "<<accumulate(a.begin(),a.end(),0);
+    // partial_sum
+    auto c = partial_sum(a.begin()+1, a.end()-1, a.begin()+1);
+    // upper_bound
 }
 

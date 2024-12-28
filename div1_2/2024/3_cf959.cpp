@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
-#define ru(i,l,r) for(int i=(l);i<=(r);i++)
+#define ru_(i,l,r) for(int i=(l);i<=(r);i++)
+#define ru(i,l,r) for(int i=(l);i<(r);i++)
 #define rup(i,l,r) for(int i=(l);i<=(r);i+=2)
-#define rd(i,r,l) for(int i=(r);i>=(l);i--)
+#define rd_(i,r,l) for(int i=(r);i>=(l);i--)
+#define rd(i,r,l) for(int i=(r);i>(l);i--)
 #define ll long long
 #define pii pair<ll,int>
 #define s1 first
@@ -28,7 +30,7 @@ struct a{
 };
 struct b{
     void solve(){
-        int n; cin>>n; string s,t; cin>>s,t;
+        int n; cin>>n; string s,t; cin>>s>>t;
         for(int i=0;i<s.size()&&s[i]=='0';++i) {
             if(t[i]!='0') {cout<<"no"<<endl; return;}
         }; cout<<"yes"<<endl;
@@ -37,10 +39,11 @@ struct b{
 };
 struct c{
     int main(){
+        cin.tie(nullptr)->sync_with_stdio(false);
         int t; cin>>t;
         while(t--){
             int n; ll x; cin>>n>>x; vector<ll> a(n+1);
-            ru(i,1,n) cin>>a[i];
+            ru_(i,1,n)cin>>a[i];
             partial_sum(a.begin()+1,a.end(),a.begin()+1);
             vector<int> dp(n+2);
             rd(i,n-1,0) {
@@ -60,7 +63,9 @@ struct d{
             vector<int> pos(n);
             iota(pos.begin(),pos.end(),0);
             vector<pair<int,int>> ans;
-            ru(i,n-1,i){
+//            for(int i=n-1;i;i--)
+            rd(i,n-1,0)
+            {
                 vector<int> occ(i,-1);
                 for(auto j: pos){
                     if(occ[a[j]%i]!=-1) {
@@ -76,12 +81,12 @@ struct d{
         }
     }
 };
-struct e{
+struct e{ // bitmask
     void solve(){
         int k; cin>>k; vector<int> a(k);
         ru(i,0,k) {
             cin>>a[i];
-            ru(i,0,a[i]){int trash; cin>>trash;}
+            ru(j,0,a[i]-1){int trash; cin>>trash;}
         }
         sort(a.begin(), a.end(), greater<>());
         int ans=0;
@@ -96,7 +101,49 @@ struct e{
     }
     int main(){int t; cin>>t;while(t--)solve();}
 };
-struct f{
+struct f{ //dfs, graph
+    void solve(){
+
+    }
+    int main(){
+        cin.tie(nullptr)->sync_with_stdio(false);int t; cin>>t;
+        while(t--){
+            int n,m; cin>>n>>m;
+            vector<vector<int>> black(n); vector<int>edg(m); vector<vector<int>>g(n);
+            ru(i,0,m){
+                int x,y,c; cin>>x>>y>>c;x--,y--; edg[i]=x^y;
+                g[x].push_back(i); g[y].push_back(i);
+                if(c==0){black[x].push_back(i); black[y].push_back(i);}
+            }
+            vector<int> deg(n);
+            ru(i,0,n)deg[i]=g[i].size()&1;
+            vector<bool>del(m,false),used(n,false);
+            auto dfs=[&](auto dfs,int u)->void{
+                used[u]=true;
+                for(auto id: black[u]){
+                    int to=edg[id]^u;
+                    if(used[to]) continue; dfs(dfs,to);
+                    if(deg[to]){del[id]=true;deg[to]^=1;deg[u]^=1;}
+                }
+            };
+            bool ok=true;
+            ru(i,0,n){if(used[i])continue; dfs(dfs,i); ok&=!deg[i];}
+            if(!ok){cout<<"no"<<endl;continue;}
+            auto euler=[&](auto euler,int u)->void{
+                while(!g[u].empty()){
+                    int id=g[u].back();g[u].pop_back();
+                    int to=edg[id]^u; if(del[id]) continue;
+                    del[id]=true; euler(euler,to);
+                }; cout<<u+1<<' ';
+            };
+            cout<<"yes"<<endl;
+            cout<<m-accumulate(del.begin(),del.end(),0)<<endl;
+            euler(euler,0);cout<<endl;
+        }
+    }
+
+};
+struct g{  //bitmask, dfs(sedukou)
     int n, k; string res, s;
     vector<vector<bool>> memo; vector<int> cnt;
     bool rec(int i,int cur){
@@ -133,7 +180,7 @@ struct f{
         }
     }
 };
-struct h{
+struct h{   //bitmask
     void solve(){
         cout<<"? aa"<<endl;
         int p,v[10]; cin>>p; p--;
@@ -157,7 +204,20 @@ struct h{
 };
 
 int main(){
-    a a;
-    a.main();
+//    a a;
+//    a.main();
+//    b b;
+//    b.main();
+//    d d;
+//    d.main();
+
+//    e e;
+//    e.main();
+
+//    f f;
+//    f.main();
+
+    g g;
+    g.main();
 
 }

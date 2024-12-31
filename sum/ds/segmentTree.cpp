@@ -70,12 +70,14 @@ int main(){
     cout<<"test"<<endl;
 
     // anonymous func
-    auto t1=[&](vector<int> arr) ->void{for(auto x:arr)cout<<x<<" ";cout<<endl;};
-    vector<int> a={1,2,3}; t1(a);
+    vector<int> a={1,2,3};
+    auto t1=[&](vector<int> arr) ->void{for(auto x:arr)cout<<x<<" ";cout<<endl;}; t1(a);
+    function<void(int)> dfs=[&](int u){for(auto v:a) dfs(v);};
 
     // vector
     a.push_back(4); t1(a);
     a.pop_back();t1(a);
+    a.emplace_back(1ll);
 
 
     // priority queue
@@ -97,10 +99,27 @@ int main(){
         cout<<b[i]<<" ";
     }; cout<<endl;
 
+    // count
+    string s="abc";
+    int cnt=count(s.begin(),s.end(),'a'); cout<<cnt<<endl;
+
     // accumulate
-    cout<<"accumulate([1,2,3]) is: "<<accumulate(a.begin(),a.end(),0);
+    cout<<"accumulate([1,2,3]) is: "<<accumulate(a.begin(),a.end(),0); cout<<endl;
     // partial_sum
     auto c = partial_sum(a.begin()+1, a.end()-1, a.begin()+1);
     // upper_bound
+
+    // *min_element
+    cout<<min(1,2)<<endl;
+
+    // fill
+    int d[10]={}; fill(d,d+4,1); cout<<"fill is: ";
+    for(int x:d) cout<<x<<' '; cout<<endl;
+
+    // put, putchar
+    putchar('putex');putchar('\n'); puts("puts's exp");
+
+
+
 }
 

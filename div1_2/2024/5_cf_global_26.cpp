@@ -138,7 +138,7 @@ struct e{ // graph + iterate
     };
     int main(){int t;cin>>t;while(t--)solve();}
 };
-struct f{ // math, brute+dp
+struct f{ // constructive
     static const int INF=998244353;
     void solve(){
         int n; cin>>n; int B; cin>>B; string s; cin>>s; s="P"+s+"S";
@@ -172,7 +172,7 @@ struct f{ // math, brute+dp
     int main(){int t;cin>>t;while(t--)solve();}
 };
 
-struct g{ // permute sort
+struct g{ // subarray move to sorted
 
 };
 struct h{ // geometry combination

@@ -1,0 +1,104 @@
+10.
+a. math
+b. string math
+c. subseq increasing enumerate
+d. constructive (dsu)
+
+e. constructive (suffix sum, prefix, permute) -> nCr
+f. range sum, metric    -> seg
+g. constructive (game, nim, sg) -> divide conquer
+h. interactive (tree diameter)
+******************************************************
+9.
+a. math
+b. permute enumerate constructive
+c. trim + sort
+d. subarray counter
+
+e. subseq enumerate -> nCr
+f. bit_or enumerate
+g. rangeSum dsu   -> fenwick
+h. interactive(dsu, mex)
+i. 01 mod count(comb) -> nCr
+*********************************************************
+*8.
+a. array sort(cyclic)
+b. array mex enumerate
+c. polygon cut to triangle(stimulation)
+d. subarray enumerate
+
+e. subseq element swap -> nCr
+f. range search   -> seg
+g. card shuffle(permute) + nim
+h. graph(dsu+constraint)
+**********************************************************
+6.
+a. array sort(range)
+b. enumerate mod divide
+c. sort, middle
+d. tree dsu(move)
+
+e. tree dsu(flip)   ->dfs, flip(bit)
+f. power        -> divide conquer
+g. string re(fft)
+h. string lexicographical -> divide conquer
+i. card game probability -> dp(unequal)  -
+*************************************************************
+5.
+a. array color
+b. digit construct
+c. prefix sum
+d. string partition
+
+e. graph constructive
+f. prefix/suffix sum+constructive
+g. array range move constructive
+h. geometry -> struct Point; triangle cover
+**************************************************************
+4.
+a. pair sort
+b. array sorted constructive
+c. array range remove
+d. array sort remove
+
+e. tree left node sum -> bfs
+f. array index remove -> dp
+g. graph diameter -> constructive
+h. interactive
+*****************************************************************
+3.
+a. grid arrange
+b. bit_xor
+c. range_sum
+d.
+
+e. graph bit_and
+f. graph euler
+g. 01 grid -> bit_xor, divide conquer
+h. interactive
+
+******************************************************************
+2.
+a. array range remove
+b. array pairwise bit_and
+c. array subtract
+d. array bit_xor
+
+e. interactive graph color
+f. array range triangle format
+g. grid cover stimulate
+h. nim-game
+i. interactive gird game
+**********************************************************************
+1.
+a. grid color
+b. nim game
+c. segment circle cover; area calc
+d. graph dsu
+
+e. array remove -> pq / dp
+f. nim, gcd -> divide conquer
+g. graph path sum + mex -> trie
+h. exponential -> Mint
+
+

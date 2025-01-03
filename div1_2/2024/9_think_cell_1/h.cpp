@@ -12,6 +12,7 @@ const ll INF_ADD=1e18;
 #define s second
 #define pll pair<ll,ll>
 #define all(x) x.begin(),x.end()
+
 const ll MOD=998244353;
 const ll MAX=200200;
 vector<ll> adj[MAX];
@@ -60,9 +61,7 @@ void solve(){
     for(ll i=0;i<n;i++){
         p[i]=q[i]=i+1;
     }
-    sort(all(p),[&](ll l,ll r){
-        return tin[l]<tin[r];
-    });
+    sort(all(p),[&](ll l,ll r){return tin[l]<tin[r];});
     sort(all(q),[&](ll l,ll r){
         return tout[l]<tout[r];
     });

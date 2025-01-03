@@ -11,7 +11,7 @@
 
 using namespace std;
 
-struct a{
+struct a{  // math: game
     int main(){
         int t; cin>>t;
         while(t--){
@@ -30,7 +30,7 @@ struct b{
         }; return 0;
     }
 };
-struct c{
+struct c{ // subseq
     static const int maxn=1e4, inf=1e9+5;
     int n, a[maxn];
     int main(){
@@ -48,7 +48,7 @@ struct c{
     }
 };
 // ds
-struct d{
+struct d{  // binaryTree+pathsum
     static const int N=2e+5;
     int a[100], pre[100], nxt[100]; bool in[100];
     int n;
@@ -73,8 +73,8 @@ struct d{
         }; return 0;
     }
 };
-//constructive
-struct e{
+
+struct e{ // cnostructive: sorted permute()-> satisfy enumerate
     static const int INF=1e9+5, N=2e4+5, MOD=998244353;
     ll fact[N*2],ifact[N*2]; int t,n,f[N*2],d[N*2];
     inline ll ncr(int n,int r){
@@ -156,8 +156,9 @@ struct f{
         }; return 0;
     };
 };
+
 // game; constructive, divide conquer
-struct g{
+struct g{ //
     static const int maxn=5005;
     int n; ll r[maxn], hsh[maxn], totr; string s[maxn]; vector<pair<int,int>> ans; bool done[maxn];
     bool solve(vector<int> grp){
@@ -225,8 +226,10 @@ struct g{
         for(auto [u,v]: ans) cout<<u+1<<' '<<v+1<<endl;
     }
 };
-// interactive
-struct h{};
+
+struct h{// interactive
+
+};
 
 int main(){
 //    b b;

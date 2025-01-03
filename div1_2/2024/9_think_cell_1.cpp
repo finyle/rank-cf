@@ -111,7 +111,6 @@ struct e{
     }
 };
 // bitset
-// 输入输出优化：
 struct f{
     void solve(){
         ll n,q; cin>>n>>q; ll till=1,len=1;
@@ -213,14 +212,14 @@ struct g{
         ll t; cin>>t; while(t--)solve(); return 0;}
 };
 
+static const ll MAX=200200;
 // tree, interactive
 struct h{
     const ll MOD=998244353;
-    const ll MAX=200200;
     vector<ll> adj[MAX];
     ll now=0,till=20;
-    vector<ll> tin(MAX,0),tout(MAX,0),depth(MAX,0);
-    vector<vector<ll>> jump(MAX,vector<ll>(till+1,0));
+    vector<ll> tin(MAX),tout(MAX),depth(MAX);
+    vector<vector<ll>> jump(MAX,vector<ll>(till));
     void dfs(ll cur,ll par){
         jump[cur][0]=par;
         ru(i,1,till){jump[cur][i]=jump[jump[cur][i-1]][i-1];}
@@ -241,6 +240,7 @@ struct h{
         ll n; cin>>n; ll m; cin>>m;
         vector<ll> a(n+5); ru(i,1,n-1){ll u,v;cin>>u>>v; adj[u].push_back(v); adj[v].push_back(u);}
         now=1; dfs(1,1); vector<ll>p(n),q(n); ru_(i,0,n)p[i]=q[i]=i+1;
+        sort(all(p));
         sort(all(p),[&](ll l,ll r){return tin[l]<tin[r];});
         sort(all(q),[&](ll l,ll r){return tout[l]<tout[r];});
         for(auto x: p) cout<<x<<" "; cout<<endl;
@@ -279,7 +279,7 @@ struct h{
             for(auto x:adj[lca_node]){
                 if(is_ancestor(lca_node,x)and is_ancestor(x,v)) consider=x;
             }
-            ans=min(ans,query_p(tin[u]+1,int[consider]-1));
+            ans=min(ans,query_p(tin[u]+1,tin[consider]-1));
             ans=min(ans,query_q(tin[consider],tin[v]));
             ans=min(ans,query_p(tin[v]+1,tout[lca_node]));
             ans=min(ans,query_q(tout[lca_node]+1,now));
@@ -288,6 +288,9 @@ struct h{
         ru(i,1,n) adj[i].clear();
     }
     int main(){int t; cin>>t; while(t--) solve(); return 0;}
+};
+
+struct i{ // comb nCr
 };
 
 

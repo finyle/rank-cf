@@ -155,6 +155,10 @@ struct f{
         }; return 0;
     }
 };
+struct g{ // math: permute
+};
+struct h{ //flow
+};
 
 int main(){
 //    a a;

@@ -119,6 +119,16 @@ int main(){
     // put, putchar
     putchar('putex');putchar('\n'); puts("puts's exp");
 
+    // sort
+    vector<int> e ={4,3,2,1};
+    sort(e.begin(),e.end(), [&](int a,int b){return a>b;});
+    for(auto i:e) cout<<i<<" "; cout<<endl;
+    vector<pair<int,int>> f={{1,2},{2,4},{2,3}};
+    for(auto i:f) cout<<i.first<<":"<<i.second<<", "; cout<<endl;
+    sort(f.begin(),f.end(),[&](pair<int,int> a,pair<int,int> b){return a.first==b.first?a.second<b.second:a.first<b.first;});
+    for(auto i:f) cout<<i.first<<":"<<i.second<<", ";
+
+
 
 
 }

@@ -200,7 +200,7 @@ struct f{ // dfs&divide conqur // scanf&printf 快过 cin&cout
     }
 };
 
-struct g{ //fft
+struct g{ //string: re -> fft
     static const ll N=(1<<11)+5, Mod=2013265921,G=31;
     ll n = 0, m = 0, a[3][N] = {}, b[3][N] = {}, c[N] = {}, d[N] = {};
     char s[N] = {}, t[N] = {};
@@ -318,7 +318,7 @@ struct g{ //fft
     }
 };
 
-struct h{ //string, dfs
+struct h{ //string permute, core lexicographically
     struct ch{
         string c;
         ch(){c="";}
@@ -366,6 +366,9 @@ struct h{ //string, dfs
             cout<<endl;
         }
     }
+};
+struct i{ // card game pro | dp(unequal)
+
 };
 int main(){
 

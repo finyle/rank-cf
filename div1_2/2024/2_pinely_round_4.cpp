@@ -62,8 +62,11 @@ struct c{
     }
     int main() {int t; cin>>t;while(t--) solve();}
 };
+struct d{ // graph
 
-struct e{
+};
+
+struct e{ // interactive
     static const int maxn=1e4;
     int n,m,color[maxn],isBipartite;
     vector<int> graph[maxn];
@@ -85,7 +88,7 @@ struct e{
     }
 };
 
-struct f{
+struct f{ // triangle format
     static const int maxn=1e4;
     int n,q,a[maxn],p[maxn];
     bool canForm(int l,int r){
@@ -111,7 +114,7 @@ struct f{
         }
     }
 };
-struct g{
+struct g{ // grid stimulation
     static const int maxn=1e4; char ope;
     int n,m,k,q,grid[maxn][maxn]; string s;
     int calc(int x1,int y1,int x2,int y2){
@@ -147,13 +150,16 @@ struct g{
     }
     int main(){int t; cin>>t; while(t--) solve();}
 };
-struct h{
+struct h{ // sg
     static const int maxn=1e4;
     bitset<maxn+1>isCompsite, isWining, isPrimeLosing, isPrimeWining, isGoodPosition;
     void init(){
         isCompsite[1]=true;
         ru(i,2,maxn) ru(j,i*2,maxn){isCompsite[j]=true;}
     }
+};
+struct i{ // interactive
+
 };
 
 int main(){

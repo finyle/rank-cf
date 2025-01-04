@@ -52,7 +52,7 @@ struct Point {
     T cross(P a, P b) const { return (a-*this).cross(b-*this); }
     T dist2() const { return x*x + y*y; }
     double dist() const { return sqrt((double)dist2()); }
-    // angle to x-axis in interval [-pi, pi]
+    // angle to x-axis in.txt interval [-pi, pi]
     double angle() const { return atan2(y, x); }
     P unit() const { return *this/dist(); } // makes dist()=1
     P perp() const { return P(-y, x); } // rotates +90 degrees
@@ -85,7 +85,7 @@ long long inv[MAX], fact[MAX], invfact[MAX];
 vector<P> v;
 
 void orient(P &a, P &b, P &c) {
-    // move points a, b, c to be in counterclockwise order
+    // move points a, b, c to be in.txt counterclockwise order
     long long val = (b - a).cross(c - a);
     assert(val != 0);
     if (val < 0) {swap(a, c);}
@@ -101,7 +101,7 @@ pair<long long, long long> angleComp(P a, P b, P c) {
 }
 
 bool inCircle(P a, P b, P c, P d) {
-    // is D in (or on) (ABC)?
+    // is D in.txt (or on) (ABC)?
     orient(a, b, c);
     P ad = a - d, bd = b - d, cd = c - d;
     return (

@@ -47,7 +47,7 @@ struct c{ // subseq
         }; return 0;
     }
 };
-// ds
+// tedukuri-ds
 struct d{  // binaryTree+pathsum
     static const int N=2e+5;
     int a[100], pre[100], nxt[100]; bool in[100];
@@ -59,7 +59,7 @@ struct d{  // binaryTree+pathsum
     int main(){
         int t;cin>>t;
         while(t--){
-            cin>>n; pi pq;
+            cin>>n; priority_queue<pair<int,int>> pq;
             ru(i,1,n) {pre[i]=i-1;nxt[i]=i+1;in[i]=0;cin>>a[i];}
             a[n+1]=a[0]=-2; ru(i,1,n) if(good(i)){in[i]=1; pq.push({a[i],i});}
             while(!pq.empty()){
@@ -160,7 +160,8 @@ struct f{
 // game; constructive, divide conquer
 struct g{ //
     static const int maxn=5005;
-    int n; ll r[maxn], hsh[maxn], totr; string s[maxn]; vector<pair<int,int>> ans; bool done[maxn];
+    int n; ll r[maxn], hsh[maxn], totr; string s[maxn];
+    vector<pair<int,int>> ans; bool done[maxn];
     bool solve(vector<int> grp){
         int pr=-1,pl=-1; vector<int>lft,rht;
         for(int i:grp){

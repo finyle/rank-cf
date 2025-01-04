@@ -2,7 +2,7 @@
 a. math
 b. string math
 c. subseq increasing enumerate
-d. constructive (dsu)
+d. constructive (dsu) -> sort
 
 e. constructive (suffix sum, prefix, permute) -> nCr
 f. range sum, metric    -> seg
@@ -40,7 +40,7 @@ d. tree dsu(move)
 
 e. tree dsu(flip)   ->dfs, flip(bit)
 f. power        -> divide conquer
-g. string re(fft)
+g. string re(fft) -> fft
 h. string lexicographical -> divide conquer
 i. card game probability -> dp(unequal)  -
 *************************************************************

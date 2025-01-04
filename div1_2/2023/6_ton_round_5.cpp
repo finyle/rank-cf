@@ -120,7 +120,7 @@ struct e{ //treelist
         cout<<sum-dp[k]<<endl;
     }
 };
-struct f{ // bfs
+struct f{ // tedukuri-bfs
     static const int N=5e3+8;
     int n,ans[N]; vector<int>G[N];
     void bfs(int u){

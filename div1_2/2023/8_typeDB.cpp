@@ -3,8 +3,8 @@
 #define ru(i,l,r) for(int i=(l);i<(r);i++)
 #define rd_(i,r,l) for(int i=(r);i>=(l);i--)
 #define rd(i,r,l) for(int i=(r);i>(l);i--)
-#define ll long long
-#define pli pair<ll,int>
+#define ld long long
+#define pli pair<ld,int>
 #define s1 first
 #define s2 second
 
@@ -42,7 +42,7 @@ struct b{
 };
 struct c{
     static const int N=2e4+5;
-    ll f[N][2],x[N],y[N];
+    ld f[N][2],x[N],y[N];
     int main(){
         int t;cin>>t;
         while(t--){
@@ -90,10 +90,10 @@ struct d{ // comb dsu
                 for(E*cur=h[u]; cur; cur=cur->nex)
                     dfs(cur->to), s[u]+=s[cur->to];
             };
-            dfs(n+1); ll ans=0;
+            dfs(n+1); ld ans=0;
             if(v[1]==1){
                 j=1;do{ans-=s[j]+(n-s[n+1]+1),j=a[j];}
-                while(j!=n+1); ans+=1ll*n*(n*2+1);
+                while(j!=n+1); ans+=1*n*(n*2+1);
             }else{
                 j=1;do{ans+=(n+s[n+1]),v[j]=2,j=a[j];}
                 while(v[j]!=2);
@@ -136,7 +136,7 @@ struct f{
     static const int N=2e4+5;
     int dest[N],visit[N],ans[N],mp[N],ansinv[N],sp; vector<int>cyc[N];
     int pow2(int y,int M){
-        ll x=2,ans=1;
+        ld x=2,ans=1;
         while(y){
             if(y&1)ans=ans*x%M;
             x=x*x%M,y>>=1;
@@ -196,7 +196,7 @@ struct g{ // graph, degree, seg
             edges[c].push_back({u,v,w});
         }
         vector<vector<int>> g(2*n);
-        vector<ll>weight(2*n);
+        vector<ld>weight(2*n);
         vector<int>deg(n); int id=n;
         ru(c,0,n){
             if(edges[c].empty()) continue;
@@ -252,7 +252,7 @@ struct g{ // graph, degree, seg
             while(t--) cout<<0<<endl;
             return 0;
         }
-        vector<pair<int, ll>> init(sz);
+        vector<pair<int, ld>> init(sz);
         ru(i,0,sz){init[i]=make_pair(0,-weight[que[i]]);}
         segtree st(init);
         while(t--){
@@ -266,19 +266,19 @@ struct g{ // graph, degree, seg
                 }
             }
             auto nd=st.get(0,sz-1).val;
-            cout<<(nd.first==0?-nd.second:0LL)<<endl;
+            cout<<(nd.first==0?-nd.second:0)<<endl;
         }
     }
 };
 #include "../../sum/template/mint.cpp"
-struct i{ // divide, ds
+struct i{ // divide, tedukuri-ds
     int main(){
         int t;cin>>t;
         while(t--){
-            int n;cin>>n; vector<ll>a(n);ru(i,0,n)cin>>a[i];
-            vector<ll>p(n+1);ru(i,0,n)p[i+1]=p[i]+a[i];
-            Mint ans=0,sum=0; map<int,ll>mp;
-            auto Modify=[&](int l,int r,ll val){
+            int n;cin>>n; vector<ld>a(n);ru(i,0,n)cin>>a[i];
+            vector<ld>p(n+1);ru(i,0,n)p[i+1]=p[i]+a[i];
+            Mint ans=0,sum=0; map<int,ld>mp;
+            auto Modify=[&](int l,int r,ld val){
                 sum+=Mint(r-l+1)*val;
                 if(r<n){
                     mp[r+1]-=val; auto it=mp.find(r+1);
@@ -306,9 +306,9 @@ struct i{ // divide, ds
                         smin.pop_back();
                         op.emplace_back(smin.back()-1,val);
                     }
-                    ll last=0;
+                    ld last=0;
                     for(int j=(int)op.size()-1;j>=0;j--){
-                        ll now=op[j].second;
+                        ld now=op[j].second;
                         Modify(i+1,op[j].first,now-last);
                         last=now;
                     }
@@ -321,9 +321,9 @@ struct i{ // divide, ds
                         smax.pop_back();
                         op.emplace_back(smax.back()-1,val);
                     }
-                    ll last=0;
+                    ld last=0;
                     for(int j=(int)op.size()-1;j>=0;j--){
-                        ll now=op[j].second;
+                        ld now=op[j].second;
                         Modify(i+1,op[j].first,now-last);
                         last=now;
                     }

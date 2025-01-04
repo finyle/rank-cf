@@ -69,7 +69,7 @@ struct d{
     }
     int main(){int t; cin>>t; while(t--) solve();}
 };
-struct e{ // tree,bfs
+struct e{ // tree,tedukuri-bfs
     const ll N=1e15;
     void solve(){
         int n; cin>>n; vector<int>a(n); for(auto &x:a) cin>>x;

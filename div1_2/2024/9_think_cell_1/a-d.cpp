@@ -81,7 +81,7 @@ void solve(){
         if(!used.count(x)){
             not_used.insert(x);
         }
-        ll cur=*(--not_used.upper_bound(x)); //find the largest element(<= x) which is not in set "used"
+        ll cur=*(--not_used.upper_bound(x)); //find the largest element(<= x) which is not in.txt set "used"
         not_used.erase(cur);
         ans.push_back(cur);
         used.insert(cur);

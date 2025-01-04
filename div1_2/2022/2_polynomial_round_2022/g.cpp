@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-#define File(a) freopen(a ".in", "r", stdin), freopen(a ".out", "w", stdout)
+#define File(a) freopen(a ".in.txt", "r", stdin), freopen(a ".out", "w", stdout)
 
 using tp = std::tuple<int, int, int>;
 const int sgn[] = {1, 998244352};

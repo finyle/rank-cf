@@ -99,7 +99,7 @@ struct Sol3 {
 
 struct Sol4 {
     int a[N];
-    int v[N]; //= 1 -> in the tree with the end node
+    int v[N]; //= 1 -> in.txt the tree with the end node
     int s[N]; //subtree size
     struct E {
         int to;
@@ -124,7 +124,7 @@ struct Sol4 {
             if (a[i] <= 0) a[i] = n + 1;
             add(a[i], i);
         }
-        dfs(n + 1); //start with the end point, dfs the tree
+        dfs(n + 1); //start with the end point, tedukuri-recursive the tree
         long long ans = 0;
         if (v[1] == 1) {
             j = 1; do { ans -= s[j] + (n - s[n + 1] + 1), j = a[j]; }

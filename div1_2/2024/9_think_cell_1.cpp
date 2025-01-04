@@ -151,7 +151,7 @@ struct f{
 //        cerr<<"Time:"<<1000*((double)clock())/(double)CLOCKS_PER_SEC<<"ms\n";
     }
 };
-// ds: fenwickTree
+// tedukuri-ds: fenwickTree
 struct g{
     static const ll MOD=998244353;
     const ll MAX=1000100;

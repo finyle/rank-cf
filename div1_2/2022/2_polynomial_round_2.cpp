@@ -84,7 +84,7 @@ struct d{
         } return 0;
     }
 };
-struct e{ // dfs, treeDP
+struct e{ // tedukuri-recursive, treeDP
     static const int N=1e4+5;
     bool f[2][N];
     int main(){

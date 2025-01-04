@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Paths{
-    /* store paths in order */
+    /* store paths in.txt order */
     vector<vector<pair<int, int>>> NS, EW;
 
     Paths(){
@@ -46,7 +46,7 @@ Paths solve(vector<int> p, vector<int> q){
     FOE(i,1,n) Ret.EW[0].PB({1, i});
     FOE(i,2,q[0]) Ret.EW[0].PB({i, n});
 
-    // Route EW flow originating in (m, 1) with q[m] as small as possible
+    // Route EW flow originating in.txt (m, 1) with q[m] as small as possible
     int m = 1;
     // special handle so congestion is 1 if possible
     if (p[0] == 1 && p[n-1] == n && q[0] == 1 && q[n-1] == n){

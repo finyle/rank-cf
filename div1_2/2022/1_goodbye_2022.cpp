@@ -60,7 +60,7 @@ struct c{
         }
     }
 };
-struct d{ // dfs, uf
+struct d{ // tedukuri-recursive, uf
     static const int N=1e4+5, P=998244353;
     int vertex, edge, self_loop;
     int main(){
@@ -92,7 +92,7 @@ struct d{ // dfs, uf
         }
     }
 };
-struct e{  // math, dfs
+struct e{  // math, tedukuri-recursive
     static const int N=3e4+5, mod=998244353, inv2=499122177;
     int a[N],u[N],v[N]; ll p[N]; vector<int>e[N];
     ll sum[N]; int fa[N];

@@ -161,7 +161,7 @@ struct e{ // fft
     }
     int main(){
         vector<ll> P(100);
-        auto mul=[&](vector<ll> const& a, vector<ll> const & b)->vector<ll>{ // multiplying two polynomials a and b using ntt in O(max(A, B)log(max(A, B))), where A, B are degrees of a, b respectively
+        auto mul=[&](vector<ll> const& a, vector<ll> const & b)->vector<ll>{ // multiplying two polynomials a and b using ntt in.txt O(max(A, B)log(max(A, B))), where A, B are degrees of a, b respectively
             vector<ll> fa(a.begin(),a.end()), fb(b.begin(),b.end());
             int n=1; while(n<(int)a.size()+(int)b.size()) n<<=1;
             fa.resize(n); fb.resize(n);

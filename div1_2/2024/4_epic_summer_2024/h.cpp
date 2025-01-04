@@ -34,8 +34,8 @@ int query(int x, int y) {
 
 /* Explanation:
  * Splits the stripe of three into |a-O-a-b-O-b-a-O-a|.
- * O are the three query points (all in the same column).
- * Cons: hard to correctly account for errors in a non-bruteforce way.
+ * O are the three query points (all in.txt the same column).
+ * Cons: hard to correctly account for errors in.txt a non-bruteforce way.
  * Pros: gives a better constant factor (3 / 4 of the original length)
  * Number of queries: n + 3 * 21 + 25 * ceil(log(25, 2)) + eps
  * Though the binary search part uses less queries than that */

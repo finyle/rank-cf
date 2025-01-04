@@ -173,7 +173,7 @@ struct e{ // graph
         }
     }
 };
-struct f{ // dfs&divide conqur // scanf&printf 快过 cin&cout
+struct f{ // tedukuri-recursive&divide conqur // scanf&printf 快过 cin&cout
     static const int N=24,S=(1<<10)+5;
     int n=0,f[N][S]={}; vector<int>ans;
     inline void dfs(int s=0,int i=0){

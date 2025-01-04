@@ -101,7 +101,7 @@ struct e{ // bitmask
     }
     int main(){int t; cin>>t;while(t--)solve();}
 };
-struct f{ //dfs, graph
+struct f{ //tedukuri-recursive, graph
     void solve(){
 
     }
@@ -143,7 +143,7 @@ struct f{ //dfs, graph
     }
 
 };
-struct g{  //bitmask, dfs(sedukou)
+struct g{  //bitmask, tedukuri-recursive(sedukou)
     int n, k; string res, s;
     vector<vector<bool>> memo; vector<int> cnt;
     bool rec(int i,int cur){

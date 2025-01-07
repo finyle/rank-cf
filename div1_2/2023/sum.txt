@@ -1,0 +1,53 @@
+10.
+a. string travel
+b. adjacent array element sum
+c. prefix sum constructive
+d. range subtract (accumulate) -> fenwick
+
+e. interactive
+f. bit xor + dsu  -> dsu
+g. directed graph transfer/ constructive
+h. array half cut/ iterate, range sum -> nCr
+**********************************************************
+9.
+a. geometry
+b. sort
+c. string element counter minOperation
+d. square number constructive
+
+e. 2-dim range cover -> sort
+f. bracket constructive -> nCr
+g. tree color middle
+h. pow
+***********************************************************
+8.
+a. exponential equation constructive
+b. square number constructive
+c. multiply constructive
+d. array element move
+
+e. subseq + adjacent xor constructive
+f. permutation transform constructive
+g. color tree dsu counter
+h. maximize constraint parameters
+i. subsegment constructive
+************************************************************
+7.
+
+e. graph increasing path
+f. tree constructive
+g. max prefix
+h. range(1..n) scale shrink -> divide
+**************************************************************
+6.
+a. nim game
+b. bit or
+c. array range remove count
+d. hash compare and swap
+
+e. geometry, comb
+f. dsu
+g. pow enum
+h. pow
+i. subarray -> divide conquer
+*************************************************************

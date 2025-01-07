@@ -126,10 +126,17 @@ int main(){
     vector<pair<int,int>> f={{1,2},{2,4},{2,3}};
     for(auto i:f) cout<<i.first<<":"<<i.second<<", "; cout<<endl;
     sort(f.begin(),f.end(),[&](pair<int,int> a,pair<int,int> b){return a.first==b.first?a.second<b.second:a.first<b.first;});
-    for(auto i:f) cout<<i.first<<":"<<i.second<<", ";
+    for(auto i:f) cout<<i.first<<":"<<i.second<<", "; cout<<endl;
 
+    // iota
+    vector<int> g={4,3,2,1};
+    iota(g.begin(), g.end(),0);
+//    cout<<strtol(reinterpret_cast<const char *>('a'), reinterpret_cast<char **>('b'), 1);
 
-
+    // int, float
+    cout<< 1<<endl;
+    cout<< (ll)(1<<20) <<endl;
+    cout<< (ll)1<<20<<endl;
 
 }
 

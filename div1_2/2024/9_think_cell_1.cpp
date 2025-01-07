@@ -139,13 +139,12 @@ struct f{
     }
     int main(){
         // 输入输出优化：
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-        freopen("error.txt", "w", stderr);
-#endif
+        ios_base::sync_with_stdio(false);cin.tie(NULL);
+//#ifndef ONLINE_JUDGE
+//        freopen("input.txt", "r", stdin);
+//        freopen("output.txt", "w", stdout);
+//        freopen("error.txt", "w", stderr);
+//#endif
         int t; cin>>t; while(t--) solve(); return 0;
 //        cout<<fixed<<setprecision(10);
 //        cerr<<"Time:"<<1000*((double)clock())/(double)CLOCKS_PER_SEC<<"ms\n";
@@ -291,6 +290,7 @@ struct h{
 };
 
 struct i{ // comb nCr
+
 };
 
 

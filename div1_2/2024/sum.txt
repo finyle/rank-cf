@@ -19,7 +19,7 @@ e. subseq enumerate -> nCr
 f. bit_or enumerate
 g. rangeSum dsu   -> fenwick
 h. interactive(dsu, mex)
-i. 01 mod count(comb) -> nCr
+i. 01 mod count(comb) -> nCr+divide+fft
 *********************************************************
 *8.
 a. array sort(cyclic)
@@ -29,8 +29,8 @@ d. subarray enumerate
 
 e. subseq element swap -> nCr
 f. range search   -> seg
-g. card shuffle(permute) + nim
-h. graph(dsu+constraint)
+g. card shuffle(permute) + nim+nCr
+h. graph(dsu+constraint) -> divide+dfs constructive(topTree drawn from splayTree) treeConstraint implement
 **********************************************************
 6.
 a. array sort(range)
@@ -39,10 +39,10 @@ c. sort, middle
 d. tree dsu(move)
 
 e. tree dsu(flip)   ->dfs, flip(bit)
-f. power        -> divide conquer
+f. power     -> divide conquer
 g. string re(fft) -> fft
 h. string lexicographical -> divide conquer
-i. card game probability -> dp(unequal)  -
+i. card game probability -> dp(unequal)
 *************************************************************
 5.
 a. array color
@@ -52,8 +52,8 @@ d. string partition
 
 e. graph constructive
 f. prefix/suffix sum+constructive
-g. array range move constructive
-h. geometry -> struct Point; triangle cover
+g. array range move(sorted, cyclic) constructive
+h. geometry -> struct Point; triangle cover point
 **************************************************************
 4.
 a. pair sort
@@ -70,10 +70,10 @@ h. interactive
 a. grid arrange
 b. bit_xor
 c. range_sum
-d.
+d. pair comb enumerate
 
-e. graph bit_and
-f. graph euler
+e. graph ->bit_and
+f. graph -> euler path
 g. 01 grid -> bit_xor, divide conquer
 h. interactive
 
@@ -86,8 +86,8 @@ d. array bit_xor
 
 e. interactive graph color
 f. array range triangle format
-g. grid cover stimulate
-h. nim-game
+g. grid cover stimulate -> sort
+h. nim-game -> bitmask
 i. interactive gird game
 **********************************************************************
 1.
@@ -98,7 +98,7 @@ d. graph dsu
 
 e. array remove -> pq / dp
 f. nim, gcd -> divide conquer
-g. graph path sum + mex -> trie
-h. exponential -> Mint
+g. graph path sum + mex -> trie, divide conquer
+h. exponential -> Mint, nCr
 
 

@@ -185,3 +185,7 @@ struct g{ //interactive
 };
 struct h{ //fft
 };
+
+int main(){
+    a a;a.main();
+}

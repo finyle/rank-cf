@@ -12,11 +12,11 @@ h. array half cut/ iterate, range sum -> nCr
 9.
 a. geometry
 b. sort
-c. string element counter minOperation
-d. square number constructive
+c. string element counter minOperation: s.size()%26 -> ru(0,cnt)ru(0,n/cnt)
+d. square number constructive: sqrt
 
-e. 2-dim range cover -> sort
-f. bracket constructive -> nCr
+e. 2-dim range cover -> sort(greedy)
+f. bracket constructive -> matrix multiply
 g. tree color middle
 h. pow
 ***********************************************************
@@ -33,7 +33,6 @@ h. maximize constraint parameters
 i. subsegment constructive
 ************************************************************
 7.
-
 e. graph increasing path
 f. tree constructive
 g. max prefix
@@ -51,3 +50,38 @@ g. pow enum
 h. pow
 i. subarray -> divide conquer
 *************************************************************
+5.
+a. nim
+b. mex
+c. array element merge enum
+d. string grid adjacent distinct
+
+e. string grid construct
+f. permutation construct, minCost(sum(adjacent subtract))
+g. weight tree pathSum prefix constructive
+h. array cyclic move
+**************************************************************
+4.
+a. array element increasing, adjacent subtract decreasing
+b. string swap pair or rever range to lexicographically
+c. divisor subtract to 0
+d. 01 matrix flip
+
+e. nim bitwise
+f. seg search constructive
+g. nCr
+h.
+i.r
+**************************************************************
+2.
+a. swap
+b. flip
+c. permute pair compare
+d. range sum
+
+e. permutation sort(range rotate)
+f. bracket and 01 flip, subseq
+g. interactive
+h .
+**************************************************************
+

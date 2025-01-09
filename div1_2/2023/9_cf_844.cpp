@@ -155,34 +155,29 @@ struct e{ // greedy
         } return 0;
     }
 };
-struct f{ // dp, comb
-    struct Mint{
-        Mint() {
-
+#include "../../sum/codeforce-template/mint.cpp"
+struct f{ //
+    int main(){
+        int n; Mint p; cin>>n>>p; p/=10000;
+        vector<vector<Mint>> C(n+1,vector<Mint>(n+1));
+        ru_(i,0,n){
+            C[i][0]=1;
+            ru_(j,1,i) C[i][j]=C[i-1][j]+C[i-1][j-1];
         }
-
-        Mint(int i) {
+        vector<vector<Mint>> dp(n+1,vector<Mint>(n+1));
+        vector<vector<Mint>> aux(n+1,vector<Mint>(n+1));
+        ru_(b,0,n) dp[0][b]=aux[0][b]=1;
+        ru_(i,1,n)ru_(b,0,n-i){
+            ru_(y,0,i-1)
+                dp[i][b]+=C[i-1][y]*aux[i-1-y][b]*(dp[y][b+1]*p+(b==0?0:dp[y][b-1]*(1-p)));
+            ru_(j,0,i) aux[i][b]+=dp[j][b]*dp[i-j][b]*C[i][j];
         }
-    };
-//    int main(){
-//        int n; Mint p; cin>>n>>p; p/=1e4;
-//        vector<vector<Mint>> C(n+1,vector<Mint>(n+1));
-//        ru_(i,0,n){
-//            C[i][0]=1;
-//            ru_(j,1,i) C[i][j]=C[i-1][j]+C[i-1][j-1];
-//        }
-//        vector<vector<Mint>> dp(n+1,vector<Mint>(n+1));
-//        vector<vector<Mint>> aux(n+1,vector<Mint>(n+1));
-//        ru_(b,0,n) dp[0][b]=aux[0][b]=1;
-//        ru_(i,1,n)ru_(b,0,n-i){
-//            ru_(y,0,i-1) dp[i][b]+=C[i-1][y]*aux[i-1-y][b]*(dp[y][b+1]*p+(b==0?0:dp[y][b-1]*(1-p)));
-//            ru_(j,0,i) aux[i][b]+=dp[j][b]*dp[i-j][b]*C[i][j];
-//        }
-//        auto ans=dp[n][0];
-//        for(int i=1;i<=n*2;i+=2) ans/=i;
-//        cout<<ans<<endl; return 0;
-//    }
+        auto ans=dp[n][0];
+        for(int i=1;i<=n*2;i+=2) ans/=i;
+        cout<<ans<<endl; return 0;
+    }
 };
+
 struct g{ // treeDP, constructive
     int main(){
         int t;cin>>t;
@@ -259,6 +254,7 @@ struct g{ // treeDP, constructive
     }
 };
 struct h{ // comb, math
+
 };
 
 int main(){
@@ -273,6 +269,8 @@ int main(){
 
 //    e e;
 //    e.main();
+    f f; f.main();
+//    g g; g.main();
 
 
 }

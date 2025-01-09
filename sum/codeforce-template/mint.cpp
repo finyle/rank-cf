@@ -1,7 +1,4 @@
-/**
- *    author:  tourist
- *    created: 29.01.2023 19:58:13
-**/
+
 #include <bits/stdc++.h>
 
 using namespace std;

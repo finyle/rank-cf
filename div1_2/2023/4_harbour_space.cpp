@@ -20,9 +20,10 @@ struct a{
     int main(){
         int t;cin>>t;
         while(t--){
-            int x,y,n;cin>>x>>y>>n; vector<int>a(n);a[0]=x;a[n-1]=y;int d=1;
+            int x,y,n;cin>>x>>y>>n;
+            vector<int>a(n);a[0]=x;a[n-1]=y;int d=1;
             rd_(i,n-2,1){
-                a[i]=a[i+1]-d; d++;
+                a[i]=a[i+1]-d; ++d;
             }
             bool ok=true;
             ru(i,0,n-1){
@@ -32,8 +33,8 @@ struct a{
                 int p=a[i+1]-a[i], q=a[i+2]-a[i+1];
                 if(p<=q) ok=false;
             }
-            if(!ok){cout<<"-1"<<endl; continue;}
-            ru(i,0,n){cout<<a[i]<<" ";}
+            if(!ok){cout<<"-1\n"; continue;}
+            ru(i,0,n)cout<<a[i]<<" ";
             cout<<endl;
         }
     }
@@ -76,7 +77,7 @@ struct c{ // bitmask
             while(p>0){
                 x-=(1<<(p-1));
                 ans.push_back(x);
-                p--;
+                --p;
             }
             cout<<ans.size()<<endl;
             for(int y:ans) cout<<y<<" ";
@@ -223,7 +224,13 @@ struct f{
         ru(i,0,q) cout<<ans[i]<<endl;
     }
 };
-struct g{ // comb, constructive
-
+struct g{ // nCr, constructive
+};
+struct h{ // pow
 };
 
+int main(){
+//    a a;a.main();
+//    b b; b.main();
+    c c;c.main();
+}

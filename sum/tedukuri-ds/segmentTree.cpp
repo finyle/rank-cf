@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+//#include <codecvt>
+
 #define ru(i,l,r) for(int i=(l);i<=(r);i++)
 #define rd(i,r,l) for(int i=(r);i>=(l);i--)
 #define ll long long
@@ -128,15 +130,22 @@ int main(){
     sort(f.begin(),f.end(),[&](pair<int,int> a,pair<int,int> b){return a.first==b.first?a.second<b.second:a.first<b.first;});
     for(auto i:f) cout<<i.first<<":"<<i.second<<", "; cout<<endl;
 
-    // iota
+    // iota, atoi,
     vector<int> g={4,3,2,1};
     iota(g.begin(), g.end(),0);
+    cout<<atoi("abc")<<endl;
 //    cout<<strtol(reinterpret_cast<const char *>('a'), reinterpret_cast<char **>('b'), 1);
 
     // int, float
     cout<< 1<<endl;
     cout<< (ll)(1<<20) <<endl;
     cout<< (ll)1<<20<<endl;
+
+    // cout<<el<<"\n"[i==n-1] 打印所有元素后换行
+    for(int i=0; i<g.size();i++) cout<<i<<"\n"[i==g.size()-1];
+
+    // multiset
+    multiset<int> h ={1,2,3,'a'}; set<int>h1={1,2,3,'a'};
 
 }
 

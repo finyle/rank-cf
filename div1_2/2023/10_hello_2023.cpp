@@ -39,7 +39,9 @@ struct b{
             if(n==3){cout<<"no"<<endl; continue;}
             if(n%2==0){
                 cout<<"yes"<<endl;
-                ru(i,0,n){cout<<(i%2==0?1:-1)<<" \n"[i==n-1];}
+//                ru(i,0,n){cout<<(i%2==0?1:-1)<<" \n"[i==n-1];}
+                ru(i,0,n){cout<<(i%2==0?1:-1)<<" \n";}
+
                 continue;
             }
             int a=n/2-1, b=n/2;
@@ -132,5 +134,5 @@ int main(){
 //    a a; a.main();
 //    b b; b.main();
 //    c c; c.main();
-    d d;d.main();
+//    d d;d.main();
 }

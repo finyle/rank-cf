@@ -77,8 +77,8 @@ public:
         pull(x, z);
     }
 
-    node get(int x, int l, int r, int ll, int rr) {
-        if (ll <= l && r <= rr) {
+    node get(int x, int l, int r, int ll_, int rr) {
+        if (ll_ <= l && r <= rr) {
             return tree[x];
         }
         int y = (l + r) >> 1;
@@ -86,12 +86,12 @@ public:
         push(x, l, r);
         node res{};
         if (rr <= y) {
-            res = get(x + 1, l, y, ll, rr);
+            res = get(x + 1, l, y, ll_, rr);
         } else {
-            if (ll > y) {
-                res = get(z, y + 1, r, ll, rr);
+            if (ll_ > y) {
+                res = get(z, y + 1, r, ll_, rr);
             } else {
-                res = unite(get(x + 1, l, y, ll, rr), get(z, y + 1, r, ll, rr));
+                res = unite(get(x + 1, l, y, ll_, rr), get(z, y + 1, r, ll_, rr));
             }
         }
         pull(x, z);
@@ -99,19 +99,19 @@ public:
     }
 
     template <typename... M>
-    void modify(int x, int l, int r, int ll, int rr, const M&... v) {
-        if (ll <= l && r <= rr) {
+    void modify(int x, int l, int r, int ll_, int rr, const M&... v) {
+        if (ll_ <= l && r <= rr) {
             tree[x].apply(l, r, v...);
             return;
         }
         int y = (l + r) >> 1;
         int z = x + ((y - l + 1) << 1);
         push(x, l, r);
-        if (ll <= y) {
-            modify(x + 1, l, y, ll, rr, v...);
+        if (ll_ <= y) {
+            modify(x + 1, l, y, ll_, rr, v...);
         }
         if (rr > y) {
-            modify(z, y + 1, r, ll, rr, v...);
+            modify(z, y + 1, r, ll_, rr, v...);
         }
         pull(x, z);
     }
@@ -133,8 +133,8 @@ public:
         return res;
     }
 
-    int find_first(int x, int l, int r, int ll, int rr, const function<bool(const node&)> &f) {
-        if (ll <= l && r <= rr) {
+    int find_first(int x, int l, int r, int ll_, int rr, const function<bool(const node&)> &f) {
+        if (ll_ <= l && r <= rr) {
             if (!f(tree[x])) {
                 return -1;
             }
@@ -144,11 +144,11 @@ public:
         int y = (l + r) >> 1;
         int z = x + ((y - l + 1) << 1);
         int res = -1;
-        if (ll <= y) {
-            res = find_first(x + 1, l, y, ll, rr, f);
+        if (ll_ <= y) {
+            res = find_first(x + 1, l, y, ll_, rr, f);
         }
         if (rr > y && res == -1) {
-            res = find_first(z, y + 1, r, ll, rr, f);
+            res = find_first(z, y + 1, r, ll_, rr, f);
         }
         pull(x, z);
         return res;
@@ -171,8 +171,8 @@ public:
         return res;
     }
 
-    int find_last(int x, int l, int r, int ll, int rr, const function<bool(const node&)> &f) {
-        if (ll <= l && r <= rr) {
+    int find_last(int x, int l, int r, int ll_, int rr, const function<bool(const node&)> &f) {
+        if (ll_ <= l && r <= rr) {
             if (!f(tree[x])) {
                 return -1;
             }
@@ -183,10 +183,10 @@ public:
         int z = x + ((y - l + 1) << 1);
         int res = -1;
         if (rr > y) {
-            res = find_last(z, y + 1, r, ll, rr, f);
+            res = find_last(z, y + 1, r, ll_, rr, f);
         }
-        if (ll <= y && res == -1) {
-            res = find_last(x + 1, l, y, ll, rr, f);
+        if (ll_ <= y && res == -1) {
+            res = find_last(x + 1, l, y, ll_, rr, f);
         }
         pull(x, z);
         return res;
@@ -206,9 +206,9 @@ public:
         build(0, 0, n - 1, v);
     }
 
-    node get(int ll, int rr) {
-        assert(0 <= ll && ll <= rr && rr <= n - 1);
-        return get(0, 0, n - 1, ll, rr);
+    node get(int ll_, int rr) {
+        assert(0 <= ll_ && ll_ <= rr && rr <= n - 1);
+        return get(0, 0, n - 1, ll_, rr);
     }
 
     node get(int p) {
@@ -217,21 +217,21 @@ public:
     }
 
     template <typename... M>
-    void modify(int ll, int rr, const M&... v) {
-        assert(0 <= ll && ll <= rr && rr <= n - 1);
-        modify(0, 0, n - 1, ll, rr, v...);
+    void modify(int ll_, int rr, const M&... v) {
+        assert(0 <= ll_ && ll_ <= rr && rr <= n - 1);
+        modify(0, 0, n - 1, ll_, rr, v...);
     }
 
-    // find_first and find_last call all FALSE elements
+    // find_first and find_last call_ all_ FALSE elements
     // to the left (right) of the sought position exactly once
 
-    int find_first(int ll, int rr, const function<bool(const node&)> &f) {
-        assert(0 <= ll && ll <= rr && rr <= n - 1);
-        return find_first(0, 0, n - 1, ll, rr, f);
+    int find_first(int ll_, int rr, const function<bool(const node&)> &f) {
+        assert(0 <= ll_ && ll_ <= rr && rr <= n - 1);
+        return find_first(0, 0, n - 1, ll_, rr, f);
     }
 
-    int find_last(int ll, int rr, const function<bool(const node&)> &f) {
-        assert(0 <= ll && ll <= rr && rr <= n - 1);
-        return find_last(0, 0, n - 1, ll, rr, f);
+    int find_last(int ll_, int rr, const function<bool(const node&)> &f) {
+        assert(0 <= ll_ && ll_ <= rr && rr <= n - 1);
+        return find_last(0, 0, n - 1, ll_, rr, f);
     }
 };

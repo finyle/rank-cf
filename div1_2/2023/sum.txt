@@ -32,13 +32,18 @@ g. color tree dsu counter
 h. maximize constraint parameters
 i. subsegment constructive
 ************************************************************
-7.
+7. ton_round 4
+a. subseq enum
+b. subseq enum
+c. min ope to permute
+d. subseq expand&shrink
+
 e. graph increasing path
 f. tree constructive
 g. max prefix
 h. range(1..n) scale shrink -> divide
 **************************************************************
-6.
+6. ton_round 5
 a. nim game
 b. bit or
 c. array range remove count

@@ -94,11 +94,41 @@ struct d{
     }
 };
 
-struct e{
-
+struct e{ // strut内预定义数组长度上限 1e4; 题目范围通常为1e6;
+    int n,m;
+    vector<int>E[2005];
+    int a[2005], vis[2005];
+    bool span(int u){
+        set<pair<int,int>>st; st.insert(pair<int,int>{a[u],u});
+        int amt=0, df=0;
+        while(st.size()){
+            auto pa=(*st.begin()); vis[pa.second]=u;
+            if(pa.first>df)return(amt==n);
+            st.erase(st.begin());
+            amt++; df++;
+            for(auto v: E[pa.second]){
+                if(vis[v]<u){
+                    st.insert(pair<int,int>{a[v],v});
+                }
+            }
+        } return (amt==n);
+    }
+    void solve(){
+        cin>>n>>m;
+        for(int i=1;i<=n;i++)cin>>a[i],vis[i]=0,E[i].clear();
+        for(int i=1;i<=m;i++){
+            int u,v; cin>>u>>v; E[u].push_back(v); E[v].push_back(u);
+        }
+        for(int i=1;i<=n;i++){
+            if(a[i]==0&&!vis[i]){
+                if(span(i)) {puts("yes"); return;}
+            }
+        } puts("no");
+    }
+    int main(){ios::sync_with_stdio(0); cin.tie(0);int t;cin>>t;while(t--)solve();}
 };
 
-#include "../../sum/template/seg_mx_mn.cpp"
+#include "../../sum/codeforce-template/seg_mx_mn.cpp"
 struct f{
     int main(){
         int t;cin>>t;
@@ -137,6 +167,89 @@ struct f{
         } return 0;
     }
 };
-int main(){
+struct g{ // N 预定义数组长度 二维 1e2; 一维1e4
+    static const int mod=1e9+7, N=505;
+    int p[N],q[N],n,f[N][N],h[N];
+    int fpow(int a,int b){
+        int ans=1;
+        while(b){
+            if(b&1) ans=1LL*ans*a%mod;
+            a=1LL*a*a%mod; b>>=1;
+        } return ans;
+    }
+    void solve(){
+        cin>>n;
+        for(int i=1;i<=n;i++){
+            int a,b;cin>>a>>b;
+            p[i]=1LL*a*fpow(b,mod-2)%mod;
+            q[i]=(1-p[i]+mod)%mod;
+        }
+        for(int i=0;i<=n;i++) cin>>h[i];
+        for(int i=0;i<=n;i++) f[0][i]=h[i];
+        for(int i=1;i<=n;i++){
+            for(int j=0;j<=n;j++){
+                f[i][j]=(1LL*p[i]*f[i-1][j+1]+1LL*q[i]*f[i-1][max(0,j-1)])%mod;
+            }
+            printf("%d ",f[i][0]);
+        }
+        printf("\n"); return;
+    }
+    int main(){int t;cin>>t;while(t--)solve();return 0;}
+};
+struct h{
+    void solve(__int128 n, __int128 a, __int128 b, __int128 c, __int128 &f) {
+        if (n < 0) { f = 0; return; }
+        if (a >= c || b >= c) {
+            solve(n, a % c, b % c, c, f);
+            f += (a / c) * (n * (n + 1) / 2) + (b / c) * (n + 1);
+        } else if (a) {
+            __int128 m = (a * n + b) / c;
+            solve(m - 1, c, c - b - 1, a, f);
+            f = n * m - f;
+        }
+    }
 
+    const long double k = (1 + sqrt((long double) 5)) / 2;
+
+    int n;
+    long long ans;
+    __int128 a, b, c, d;
+
+    int main() {
+        int T;
+        scanf("%d", &T);
+        __int128 x = (__int128) 2000000000000000000ll * 1000000000;
+        __int128 y = (__int128) 1000000000000000000ll * 1000000000;
+        __int128 z = (__int128) 1618033988749894848ll * 1000000000 + 204586834;
+        for (; T; T--) {
+            scanf("%d", &n);
+            int i = 0;
+            for (int l = 0, r = n - 1, mid; l <= r; ) {
+                mid = l + r >> 1;
+                if (n - floor(mid / k) <= mid + mid) {
+                    i = mid; r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+            solve((n - 1) / 2, x, 0, z, a);
+            solve((i - 1) / 2, x, 0, z, b);
+            solve((n - 2) / 2, x, y, z, c);
+            solve((i - 2) / 2, x, y, z, d);
+            ans = i + (i % 2 ? -1 : 1) * ((a - b) - (c - d));
+            if ((n - i) % 2) { ans = n - ans; }
+            printf("%lld\n", ans);
+        }
+        return 0;
+    }
+};
+
+int main(){
+//    a a; a.main();
+//    c c; c.main();
+
+//    e e;e.main();
+//    f f; f.main();
+//    g g;g.main();
+    h h;h.main();
 }

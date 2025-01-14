@@ -186,7 +186,7 @@ struct f{
     }
 };
 
-#include "../../sum/template/seg.cpp"
+#include "../../sum/codeforce-template/seg.cpp"
 struct g{ // graph, degree, seg
     int main(){
         int n,t; cin>>n>>t;
@@ -270,7 +270,7 @@ struct g{ // graph, degree, seg
         }
     }
 };
-#include "../../sum/template/mint.cpp"
+#include "../../sum/codeforce-template/mint.cpp"
 struct i{ // divide, tedukuri-ds
     int main(){
         int t;cin>>t;
@@ -348,7 +348,7 @@ int main(){
 //    e e;e.main();
 //    f f;f.main();
 //    g g;g.main();
-    i i; i.main();
+//    i i; i.main();
 
 
 }

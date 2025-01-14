@@ -272,3 +272,9 @@ struct i{ //divide, conquer
         }
     }
 };
+
+int main(){
+//    a a;a.main();
+
+    f f;f.main();
+}

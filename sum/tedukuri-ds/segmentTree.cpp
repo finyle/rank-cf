@@ -142,10 +142,15 @@ int main(){
     cout<< (ll)1<<20<<endl;
 
     // cout<<el<<"\n"[i==n-1] 打印所有元素后换行
-    for(int i=0; i<g.size();i++) cout<<i<<"\n"[i==g.size()-1];
+    for(int i=0; i<g.size();i++) cout<<g[i]<<"\n"[i==g.size()-1];
 
     // multiset
     multiset<int> h ={1,2,3,'a'}; set<int>h1={1,2,3,'a'};
+
+
+    // move
+    cout<<endl; queue<int> i={}; i.emplace(1);
+    cout<<"move test: "<< i.front() <<endl;
 
 }
 
